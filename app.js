@@ -20,8 +20,11 @@ let blogPosts = [];
 
 // 
 app.get("/", (req, res) => {
-  res.render("home", { homeContent: homeStartingContent });
-  console.log(blogPosts);
+  res.render("home",
+    {
+      homeContent: homeStartingContent,
+      posts: blogPosts,
+    });
 });
 
 app.get("/about", (req, res) => {
