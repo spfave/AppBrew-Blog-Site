@@ -57,9 +57,8 @@ app.get("/posts/:postTitle", (req, res) => {
     const postTitle = lodash.lowerCase(post.title);
 
     if (postTitle === requestedPost) {
-      console.log("Match found");
-    } else {
-      console.log("No match");
+      res.render("post", { postTitle: post.title, postEntry: post.entry });
+      // console.log("Match found");
     }
   });
 });
